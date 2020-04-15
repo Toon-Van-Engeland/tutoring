@@ -1,0 +1,49 @@
+﻿<Window x:Class="Hangman.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hangman"
+        mc:Ignorable="d"
+        Title="Hangman" Height="480" Width="800">
+    <Grid>
+        <Label Content="Insert a word..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,13,0,0" Width="215"/>
+        <PasswordBox Name="InitializeWordPasswordBox" VerticalContentAlignment="Center"  MaxLength="12" ToolTip="Insert here a word to start the game" BorderBrush="CornflowerBlue" HorizontalAlignment="Left" Height="30" Margin="51,33,0,0" VerticalAlignment="Top" Width="215"/>
+        <Button Name="StartButton" Content="Start"  HorizontalAlignment="Left" Margin="308,33,0,0" VerticalAlignment="Top" Width="76" Height="30" Click="StartButton_Click"/>
+
+        <Label Content="Insert a letter..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,313,0,0" Width="215"/>
+        <TextBox Name="GuessingLetterTextBox" MaxLength="1" IsEnabled="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="51,333,0,0" TextWrapping="Wrap" ToolTip="Put the guessing letter here..." Text="" BorderBrush="CornflowerBlue" VerticalAlignment="Top" Width="215"/>
+        <Button Name="GuessButton" Content="Guess" IsEnabled="False" HorizontalAlignment="Left" Margin="308,333,0,0" VerticalAlignment="Top" Width="76" Height="30" Click="GuessButton_Click"/>
+
+        <Label Content="Insert a word..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,363,0,0" Width="215"/>
+        <TextBox Name="GuessingWordTextBox" MaxLength="12" IsEnabled="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="51,383,0,0" TextWrapping="Wrap" ToolTip="Put the word you guess here..." Text="" BorderBrush="CornflowerBlue" VerticalAlignment="Top" Width="215"/>
+        <Button Name="SolveButton" Content="Solve" IsEnabled="False" HorizontalAlignment="Left" Margin="308,383,0,0" VerticalAlignment="Top" Width="76" Height="30" Click="SolveButton_Click"/>
+
+        <Canvas Name="HangmanCanvas"  HorizontalAlignment="Left" Height="350" Margin="450,33,0,0" VerticalAlignment="Top" Width="300">
+            <Line Name="Line1" X1="15" X2="75" Y1="300" Y2="250" Stroke="Black"  ></Line>
+            <Line Name="Line2" X1="135" X2="75" Y1="300" Y2="250" Stroke="Black"  ></Line>
+            <Line Name="Line3" X1="75" X2="75" Y1="50" Y2="250" Stroke="Black"  ></Line>
+            <Line Name="Line4" X1="75" X2="250" Y1="50" Y2="50" Stroke="Black"  ></Line>
+            <Line Name="Line5" X1="125" X2="75" Y1="50" Y2="100" Stroke="Black"  ></Line>
+            <Line Name="Line6" X1="225" X2="225" Y1="50" Y2="75" Stroke="Black"  ></Line>
+            <Ellipse Name="HeadEllipse" Height="35" Canvas.Left="207" Canvas.Top="75" Width="35" Stroke="Black" />
+            <Line Name="Line7" X1="225" X2="225" Y1="110" Y2="185" Stroke="Black"  ></Line>
+            <Line Name="Line8" X1="200" X2="250" Y1="125" Y2="125" Stroke="Black"  ></Line>
+            <Line Name="Line9" X1="225" X2="250" Y1="185" Y2="215" Stroke="Black"  ></Line>
+            <Line Name="Line10" X1="225" X2="200" Y1="185" Y2="215" Stroke="Black"  ></Line>
+        </Canvas>
+
+        <TextBlock Name="Letter1TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="51,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter2TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="76,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter3TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="101,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter4TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="126,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter5TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="151,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter6TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="176,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter7TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="201,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter8TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="226,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter9TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="251,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter10TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="276,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter11TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="301,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+        <TextBlock Name="Letter12TextBlock" Text="" Visibility="Hidden" HorizontalAlignment="Left" Margin="326,147,0,0" TextWrapping="NoWrap" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" RenderTransformOrigin="0.455,-3.39" Height="30" Width="25"/>
+    </Grid>
+</Window>

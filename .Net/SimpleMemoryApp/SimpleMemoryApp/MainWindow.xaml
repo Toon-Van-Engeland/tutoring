@@ -1,0 +1,30 @@
+﻿<Window x:Class="SimpleMemoryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleMemoryApp"
+        mc:Ignorable="d"
+        Title="Circles" Height="460" Width="820">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Name="openMenuItem" Header="_Open" Click="OpenMenuItem_Click"/>
+                <MenuItem Name="saveMenuItem" Header="_Save" IsEnabled="False" Click="SaveMenuItem_Click"/>
+                <Separator/>
+                <MenuItem Name="exitMenuItem" Header="_Exit" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="773*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Muis X-locatie:" HorizontalAlignment="Left" Margin="71.41,51,0,0" VerticalAlignment="Top" Height="27" Width="90" Grid.Column="1"/>
+            <Label Name="xLocationLabel" Content="" HorizontalAlignment="Left" Margin="166.41,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.973,0.409" Grid.Column="1"/>
+            <Label Content="Muis Y-Locatie: " HorizontalAlignment="Left" Margin="327.41,51,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Name="yLocationLabel" Content="" HorizontalAlignment="Left" Margin="421.41,52,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Canvas x:Name="mainCanvas" HorizontalAlignment="Left" Height="309" Margin="10,83,0,0" VerticalAlignment="Top" Width="772" MouseDown="CanvasClicked" Background="#FFD3C8C8" MouseMove="CursorMove" Grid.ColumnSpan="2"/>
+        </Grid>
+    </DockPanel>
+</Window>

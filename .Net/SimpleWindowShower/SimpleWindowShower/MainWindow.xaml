@@ -1,0 +1,24 @@
+﻿<Window x:Class="SimpleWindowShower.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleWindowShower"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Name="newMenuItem" Click="NewMenuItem_Click"/>
+                <MenuItem Header="Save" IsEnabled="False" Name="saveMenuItem"/>
+                <Separator/>
+                <MenuItem Header="Exit" Name="exitMenuItem" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <ListBox Name="studentListBox" HorizontalAlignment="Left" Height="399" Margin="40,10,0,0" VerticalAlignment="Top" Width="329"/>
+            <Button Name="currentButton" Content="Show currently selected" HorizontalAlignment="Left" Margin="421,30,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="CurrentButton_Click"/>
+            <Button Name="detailButton" Content="Show Details" HorizontalAlignment="Left" Margin="420,110,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="DetailButton_Click"/>
+        </Grid>
+    </DockPanel>
+</Window>
